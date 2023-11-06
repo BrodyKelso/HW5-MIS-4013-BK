@@ -3,44 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <title>Brody Kelso To-Do List</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .completed {
       text-decoration: line-through;
       color: #6c757d;
     }
+    #tasks li {
+      cursor: pointer;
+    }
+    .btn-filter {
+      width: 100%;
+    }
+    .container {
+      max-width: 800px;
+    }
+    #new-task {
+      flex: 1;
+    }
+    .input-group-append {
+      width: auto;
+    }
   </style>
 </head>
 <body>
 
-<div class="container mt-5">
-  <h2 class="mb-3">Brody Kelso To-Do List</h2>
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Brody Kelso To-Do List</h2>
 
-  <div class="input-group mb-4">
+  <div class="input-group mb-3">
     <input type="text" id="new-task" class="form-control" placeholder="Enter a new task" aria-label="Enter a new task">
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="add-task-btn">Add Task</button>
+      <button class="btn btn-outline-primary" type="button" id="add-task-btn">Add Task</button>
     </div>
   </div>
 
-  <div class="btn-group mb-3" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary" onclick="filterTasks('all')">All Tasks</button>
-    <button type="button" class="btn btn-secondary" onclick="filterTasks('completed')">Completed</button>
-    <button type="button" class="btn btn-secondary" onclick="filterTasks('incomplete')">Incomplete</button>
+  <div class="btn-toolbar justify-content-between mb-3" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-info btn-filter" onclick="filterTasks('all')">All Tasks</button>
+      <button type="button" class="btn btn-success btn-filter" onclick="filterTasks('completed')">Completed</button>
+      <button type="button" class="btn btn-warning btn-filter" onclick="filterTasks('incomplete')">Incomplete</button>
+    </div>
   </div>
 
-  <ul id="tasks" class="list-group mb-4">
+  <ul id="tasks" class="list-group">
     <!-- Task items will be dynamically inserted here -->
   </ul>
 
-  <button id="download-tasks-btn" class="btn btn-primary">Download Tasks</button>
+  <button id="download-tasks-btn" class="btn btn-primary mt-3">Download Tasks</button>
 </div>
 
 <!-- Bootstrap JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- Custom Script -->
 <script src="script.js"></script>
