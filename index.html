@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple To-Do List</title>
+  <title>To-Do List</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .completed {
@@ -14,32 +14,36 @@
 </head>
 <body>
 
-  <div class="container mt-5">
-    <h2 class="mb-3">To-Do List</h2>
+<div class="container mt-5">
+  <h2 class="mb-3">Brody Kelso To-Do List</h2>
 
-    <!-- New Task Input -->
-    <div class="input-group mb-3">
-      <input type="text" id="new-task" class="form-control" placeholder="Add new task..." aria-label="Recipient's username" aria-describedby="button-add">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="add-task-btn">Add</button>
-      </div>
+  <div class="input-group mb-4">
+    <input type="text" id="new-task" class="form-control" placeholder="Enter a new task" aria-label="Enter a new task">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="add-task-btn">Add Task</button>
     </div>
-
-    <!-- Task List -->
-    <ul id="tasks" class="list-group mb-3">
-      <!-- Task items will be dynamically inserted here -->
-    </ul>
-
-    <!-- Download Tasks Button -->
-    <button id="download-tasks-btn" class="btn btn-primary">Download Tasks</button>
   </div>
 
-  <!-- Bootstrap JS, Popper.js, and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <div class="btn-group mb-3" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" onclick="filterTasks('all')">All Tasks</button>
+    <button type="button" class="btn btn-secondary" onclick="filterTasks('completed')">Completed</button>
+    <button type="button" class="btn btn-secondary" onclick="filterTasks('incomplete')">Incomplete</button>
+  </div>
 
-  <!-- Your JavaScript File -->
-  <script src="script.js"></script>
+  <ul id="tasks" class="list-group mb-4">
+    <!-- Task items will be dynamically inserted here -->
+  </ul>
+
+  <button id="download-tasks-btn" class="btn btn-primary">Download Tasks</button>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Custom Script -->
+<script src="script.js"></script>
+
 </body>
 </html>
