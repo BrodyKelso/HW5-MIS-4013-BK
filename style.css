@@ -1,13 +1,11 @@
-/* style.css */
 
-/* Add some padding and a max-width to the body to prevent elements from stretching too far on larger screens */
 body {
     padding-top: 20px;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Custom styles for the to-do list items */
+
 #tasks li {
     position: relative;
     padding: .75rem 1.25rem;
@@ -17,26 +15,26 @@ body {
     cursor: pointer;
 }
 
-/* Style for the completed tasks */
+
 .completed {
     text-decoration: line-through;
     color: #6c757d;
     background-color: #e9ecef;
 }
 
-/* Custom button styles if needed */
+
 .btn-outline-secondary {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
 }
 
-/* Style for input field */
+
 #new-task {
     border-radius: 0;
 }
 
-/* Style for the buttons to make them full-width on smaller screens */
+
 @media (max-width: 576px) {
     .btn-group .btn {
         width: 100%;
@@ -54,25 +52,24 @@ body {
     }
 }
 
-/* Add some custom padding to the top of the page */
+
 .container {
     padding-top: 30px;
 }
 
-/* Additional global padding and margin adjustments */
+
 p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin-top: 0;
     padding-top: 0;
 }
 
-/* Ensures the list items have no bullets and margin/padding is reset to work well with Bootstrap */
 #tasks {
     list-style-type: none;
     padding-left: 0;
     margin-top: 1rem;
 }
 
-/* Utility class for visually hiding elements, but keeping them accessible for screen readers */
+
 .visually-hidden {
     position: absolute;
     width: 1px;

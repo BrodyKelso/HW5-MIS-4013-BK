@@ -1,10 +1,10 @@
-// script.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
   loadTasks();
 });
 
-// Function to add a new task
+
 function addTask() {
   let taskInput = document.getElementById('new-task');
   let newTask = taskInput.value.trim();
@@ -21,13 +21,13 @@ function addTask() {
   }
 }
 
-// Function to toggle the completion status of a task
+
 function toggleTaskStatus() {
   this.classList.toggle('completed');
   saveTasks();
 }
 
-// Function to save tasks to local storage
+
 function saveTasks() {
   let tasks = [];
   document.querySelectorAll('#tasks li').forEach(task => {
@@ -39,25 +39,9 @@ function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Function to load tasks from local storage
-function loadTasks() {
-  let storedTasks = JSON.parse(localStorage.getItem('tasks'));
-  
-  if (storedTasks) {
-    storedTasks.forEach(task => {
-      let li = document.createElement('li');
-      li.className = 'list-group-item';
-      if (task.completed) {
-        li.classList.add('completed');
-      }
-      li.appendChild(document.createTextNode(task.text));
-      li.addEventListener('click', toggleTaskStatus);
-      document.getElementById('tasks').appendChild(li);
-    });
-  }
-}
 
-// Function to filter tasks based on their status
+
+
 function filterTasks(status) {
   let lis = document.querySelectorAll('#tasks li');
   lis.forEach(li => {
@@ -75,7 +59,7 @@ function filterTasks(status) {
   });
 }
 
-// Function to download tasks as a .txt file
+
 function downloadTasks() {
   let tasks = [];
   document.querySelectorAll('#tasks li').forEach(task => {
@@ -91,13 +75,11 @@ function downloadTasks() {
   document.body.removeChild(a);
 }
 
-// Event listener for the 'Add Task' button
+
 document.getElementById('add-task-btn').addEventListener('click', addTask);
 
-// Event listener for the 'Download Tasks' button
 document.getElementById('download-tasks-btn').addEventListener('click', downloadTasks);
 
-// Ensure that the 'Enter' key also triggers task addition
 document.getElementById('new-task').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     addTask();
